@@ -15,7 +15,7 @@
 
     },
 
-    "autoload-dev": {
+    "autoload": {
         "psr-4": {
             "Yazan\\DataTable\\": "src/"
         }
