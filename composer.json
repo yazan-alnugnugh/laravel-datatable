@@ -16,13 +16,6 @@
         "psr-4": {
             "Yazan\\DataTable\\": "src/"
         }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Yazan\\DataTable\\DataTableServiceProvider"
-            ]
-
-        }
     }
+
 }
