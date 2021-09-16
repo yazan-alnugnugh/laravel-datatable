@@ -1,0 +1,28 @@
+{
+    "name": "yazan/laravel-datatable",
+    "description": "this package help you to easy create datatable",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yazan-alnughnugh",
+            "email": "yazan-n100@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+
+    "autoload-dev": {
+        "psr-4": {
+            "Yazan\\DataTable\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yazan\\DataTable\\DataTableServiceProvider"
+            ]
+
+        }
+    }
+}
