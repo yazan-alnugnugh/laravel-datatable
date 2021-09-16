@@ -10,12 +10,21 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": ">=7.4",
+        "another-vendor/package": "1.*"
+    },
 
     "autoload-dev": {
         "psr-4": {
             "Yazan\\DataTable\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yazan\\DataTable\\DataTableServiceProvider"
+            ]
+        }
     }
-
 }
