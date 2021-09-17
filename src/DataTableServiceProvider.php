@@ -25,6 +25,7 @@ class DataTableServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+//        dd('hello');
         //
         if ($this->app->runningInConsole()) {
             $this->commands([

@@ -1,5 +1,5 @@
 {
-    "name": "yazan/laravel-datatable",
+    "name": "yazan/datatable",
     "description": "this package help you to easy create datatable",
     "type": "library",
     "license": "MIT",
@@ -10,10 +10,7 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        "php": ">=7.4"
-
-    },
+    "require": {},
 
     "autoload": {
         "psr-4": {
@@ -25,6 +22,7 @@
             "providers": [
                 "Yazan\\DataTable\\DataTableServiceProvider"
             ]
+
         }
     }
 }
