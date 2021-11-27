@@ -1,5 +1,5 @@
 {
-    "name": "yazan/datatable",
+    "name": "yazan/laravel-datatable",
     "description": "this package help you to easy create datatable",
     "type": "library",
     "license": "MIT",
