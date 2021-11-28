@@ -10,11 +10,11 @@ These two Laravel packages are for making easy and quickly dataTable for your wo
 
 ## Table of contents
 
-  1. [Introduction](1-introduction.md)
-      * [Quick Example](#Quick Example)
-  2. [Installation and Setup](2-Installation-and-Setup.md)
-  3. [Configuration](3-Configuration.md)
-  4. [Usage](4-Usage.md)
+  1. [Introduction](README.md)
+      * [Quick Example](#Quick-Example)
+  2. [Installation and Setup](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/2-Installation-and-Setup.md)
+  3. [Configuration](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/3-Configuration.md)
+  4. [Usage](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/4-Usage.md)
 
 
 

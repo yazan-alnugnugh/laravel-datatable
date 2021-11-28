@@ -1,7 +1,7 @@
 # Introduction
 
 <p align="center">
-    <img src="art/intro-image.png" alt="laravel-vue-datatable intro image">
+    <img src="../art/intro-image.png" alt="laravel-vue-datatable intro image">
 </p>
 
 **if you want to make dataTable easy and quickly with crazy features, this package is for you.**

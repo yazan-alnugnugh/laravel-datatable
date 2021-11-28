@@ -4,20 +4,21 @@
   2. [Installation and Setup](2-Installation-and-Setup.md)
   3. [Configuration](3-Configuration.md)
   4. [Usage](4-Usage.md)
-        * [Basic Usage](#Basic Usage)
-        * [relation include](#relation include)
+        * [Basic Usage](#Basic-Usage)
+        * [relation include](#relation-include)
         * [Searching](#Searching)
         * [Sorting](#Sorting)
-        * [Selection filter](#Selection filter for relations)
-        * [Data mapping](#Data mapping)
-        * [Action buttons](#Action buttons)
+        * [Selection filter](#Selection-filter-for-relations)
+        * [Data mapping](#Data-mapping)
+        * [Action buttons](#Action-buttons)
         * [Delete](#Delete)
-        * [Delete All](#Delete All)
+        * [Delete All](#Delete-All)
         
 
 ## Usage
 
-##Basic Usage
+## Basic Usage
+
 ### **server side**
 
 ##### **step 1** 
@@ -143,7 +144,8 @@ use the data-table component in your blade
 
 ```
 
-##relation include
+## relation include
+
 ### **server side**
 
 ##### **step 1** 
@@ -195,7 +197,7 @@ add relation column to columns prop
 ```
 
 
-##Searching
+## Searching
 
 ### **server side**
 
@@ -208,7 +210,8 @@ add ``` $searchColumns``` property to start use search feature
 
      public $searchColumns = ['id'];
 ````
-##Sorting
+
+## Sorting
 
 ### **client side**
 
@@ -256,7 +259,7 @@ there is 3 property inside sort
 
 ```
 
-##Per page
+## Per page
 
 
 ### **client side**
@@ -294,7 +297,7 @@ to use rows count per page we need to use ````perPage```` object
 
 ```
 
-##Selection filter for relations
+## Selection filter for relations
 
 
 ### **client side**
@@ -346,7 +349,7 @@ to add select input for relation column you will add filter object as below
 </x-app-layout>
 ```
 
-##Data mapping
+## Data mapping
 ### **server side**
 
 if you would to restructure data we provide this method for you
@@ -376,7 +379,7 @@ after that, we will add this method
         }
 ```
 
-##Action buttons
+## Action buttons
 
 ### **server side**
 
@@ -403,7 +406,8 @@ we can add associative array to action array with two value button structure and
  
         }
 ```
-##Delete
+
+## Delete
 
 ### **server side**
 
@@ -433,7 +437,7 @@ to use delete action just we can insert our delete button and add
 
 
 
-##Delete All
+## Delete All
 
 ### **client side**
 
