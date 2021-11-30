@@ -91,14 +91,14 @@
 
 | Name | Type | Default | Description  
 | --- | --- | --- | --- |
-| `filter` | Object | {} | Add filters data |
-| `filter.selection` | Object | {} | the object contains all filter selection data |
-| `filter.selection.show` | Bool | true | to disable or enable selection filter |
-| `filter.selection.data` | Object | {} | the object is array contains all select input options |
-| `filter.selection.data.label` | String | '' | name appears beside select input |
-| `filter.selection.data.relation` | String | '' | relation name you will get it |
-| `filter.selection.data.column` | String | '' | column name you will get it |
-| `filter.selection.data.rows` | Json | [{}] | all rows from the database as JSON |
+| `filters` | Object | {} | Add filters data |
+| `filters.selection` | Object | {} | the object contains all filter selection data |
+| `filters.selection.show` | Bool | true | to disable or enable selection filter |
+| `filters.selection.data` | Object | {} | the object is array contains all select input options |
+| `filters.selection.data.label` | String | '' | name appears beside select input |
+| `filters.selection.data.relation` | String | '' | relation name you will get it |
+| `filters.selection.data.column` | String | '' | column name you will get it |
+| `filters.selection.data.rows` | Json | [{}] | all rows from the database as JSON |
 
 
 
@@ -123,7 +123,6 @@
                       "
     ></data-table>
 ```
-                                                               |
 
 | Name | Type | Default | Description  
 | --- | --- | --- | --- |

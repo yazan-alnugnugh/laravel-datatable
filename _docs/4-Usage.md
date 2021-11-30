@@ -21,14 +21,14 @@
 
 ### **server side**
 
-##### **step 1** 
+#### step 1 
 
 create grid class 
 ```bash
 php artisan make:grid-class exampleGrid
 ```
 
-##### **step 2** 
+#### step 2 
 Start use Grid Class
 and add model namespace to ``` $model ``` property
 
@@ -52,7 +52,7 @@ class PostGrid extends DataGrid
 
 ```
 
-##### **step 3** 
+#### step 3 
 
 Make an instance from PostGrid class and return the collection
 
@@ -71,21 +71,16 @@ public function all(Request $request)
 
 
 ### **client side**
-##### **step 1** 
+#### step 1 
 
 use the data-table component in your blade
 
 ```html
 // resources/posts/index.blade.php
 
-<x-app-layout>
-
-
-
-
     <data-table
         :config="{
-        url: `/{{app()->getLocale()}}/admin/posts/all?page=1`,
+        url: `/posts/all?page=1`,
             },
         }"
         :columns="[
@@ -135,20 +130,13 @@ use the data-table component in your blade
 
     ></data-table>
 
-
-
-
-
-</x-app-layout>
-}
-
 ```
 
 ## relation include
 
 ### **server side**
 
-##### **step 1** 
+#### step 1 
 
 add ``` $relationAble``` and ``` $with``` properties to start insert relation columns to table 
 
@@ -158,41 +146,28 @@ add ``` $relationAble``` and ``` $with``` properties to start insert relation co
    public $relationAble = true;
    protected $with = ['admin'];
 ````
+after that we need to [remapping data](#Data-mapping) To determine which relation column we want to add to data-table
+
 ### **client side**
-##### **step 1** 
+#### step 1 
 add relation column to columns prop
 ```html
 // resources/posts/index.blade.php
 
-<x-app-layout>
-
-
-
-
     <data-table
-       
         :columns="[
-        {
-        label: 'Admin',
-        column: 'admin',
-         show: true,
-            sort:{
-             sortable: true,
-             sortColumn: 'title',
-             sortDir: 'asc',
+            {
+            label: 'Admin',
+            column: 'admin',
+            show: true,
+                sort:{
+                 sortable: true,
+                 sortColumn: 'title',
+                 sortDir: 'asc',
+                },
             },
-       },
-        ]
-        "
-
+        ]"
     ></data-table>
-
-
-
-
-
-</x-app-layout>
-}
 
 ```
 
@@ -227,35 +202,20 @@ there is 3 property inside sort
 ```html
 // resources/posts/index.blade.php
 
-<x-app-layout>
-
-
-
-
     <data-table
-       
         :columns="[
-        {
-        label: 'Admin',
-        column: 'admin',
-         show: true,
-            sort:{
-             sortable: true,
-             sortColumn: 'title',
-             sortDir: 'asc',
-            },
-       },
-        ]
-        "
-
+            {
+            label: 'Admin',
+            column: 'admin',
+            show: true,
+                sort:{
+                 sortable: true,
+                 sortColumn: 'title',
+                 sortDir: 'asc',
+                },
+           },
+        ]"
     ></data-table>
-
-
-
-
-
-</x-app-layout>
-}
 
 ```
 
@@ -264,7 +224,7 @@ there is 3 property inside sort
 
 ### **client side**
 
-to use rows count per page we need to use ````perPage```` object
+to use rows count per page we need to use ````perPage```` prop
 
 1- ````perPage.show````: disable or enable the feature
 
@@ -272,28 +232,13 @@ to use rows count per page we need to use ````perPage```` object
 ```html
 // resources/posts/index.blade.php
 
-<x-app-layout>
-
-
-
-
     <data-table
-       
-         :config="{
-                perPage: {
+         :perPage="
+                {
                  show: true,
-                 counts: [5,10, 25, 50, 100, 250],
-                },
-            }>
-
-    </data-table>
-
-
-
-
-
-</x-app-layout>
-
+                 counts: [10, 25, 50, 100, 250],
+                }"
+    ></data-table>
 
 ```
 
@@ -302,7 +247,7 @@ to use rows count per page we need to use ````perPage```` object
 
 ### **client side**
 
-to add select input for relation column you will add filter object as below
+to add select input for relation column you will add filters prop as below
 ```selection``` the object contains all filter selection data
  
  ````show```` to disable or enable selection filter 
@@ -320,33 +265,23 @@ to add select input for relation column you will add filter object as below
 ```html
 // resources/posts/index.blade.php
 
-<x-app-layout>
-
-
     <data-table
-       
-         :config="{
-                filter:{
-                                selection:{
-                                    show: true,
-                                    data:
-                                    [
-                                    {
-                                    label: 'Admins',
-                                    relation: 'createdBy',
-                                    column: 'first_name',
-                                    rows: {{json_encode($admins)}}
-                
-                                    },
-                                    
-                                    ]
-                                }
-                }
-            }>
+                :filters="{
+                    selection:{
+                        show: true,
+                        data:[
+                            {
+                            label: 'Admins',
+                            relation: 'createdBy',
+                            column: 'first_name',
+                            rows: {{json_encode($admins)}}
+                            },
+                        ]
+                    }
+               }"
+            
 
-    </data-table>
-
-</x-app-layout>
+    ></data-table>
 ```
 
 ## Data mapping
@@ -360,7 +295,8 @@ in first we will add ```$isMapping``` property equal true
 
    protected $isMapping = true;
 ```
-after that, we will add this method
+after that, we will add this method is contains callback 
+function return array contain our collection 
 ```php
 // app/DataGrid/PostGrid.php
 
@@ -398,7 +334,7 @@ we can add associative array to action array with two value button structure and
                     'created_at' => $value['created_at'],
                     'updated_at' => $value['updated_at'],
                     'action' => [
-                        'edit' => ['<i data-path="'. route( 'admin.places.edit', ['place' => $value['id']]).'" class="pathName cursor-pointer hover:text-green-500 far fa-edit"></i>', true],
+                        'edit' => ['<i data-path="'. route( 'admin.posts.edit', ['post' => $value['id']]).'" class="pathName cursor-pointer hover:text-green-500 far fa-edit"></i>', true],
                     ],
                   
                 ];
@@ -445,31 +381,16 @@ inside toolbar object will add url property contain our delete all route
 ```html
 // resources/posts/index.blade.php
 
-<x-app-layout>
-
-
-
-
     <data-table
-       
          :config="{
                toolbar:{
-                           show: true,
-                           delete: {
-                               url: `/admin/places/destroy/all`
-                           }
-               
-                           },
-            }>
-
-    </data-table>
-
-
-
-
-
-</x-app-layout>
-
+                   show: true,
+                   delete: {
+                       url: `/posts/destroy/all`
+                   }
+                },           
+         }"   
+    ></data-table>
 
 ```
 
@@ -482,7 +403,7 @@ public function destroyAll(Request $request){
 
         $list = $request->list;
         $posts = Post::destroy($list);
-        return ['success' => true, 'message' => 'admins deleted successfully'];
+        return ['success' => true, 'message' => 'posts deleted successfully'];
 
     }
 ```

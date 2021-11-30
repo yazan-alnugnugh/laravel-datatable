@@ -62,15 +62,9 @@ public function all(Request $request)
 
 ```html
 // resources/posts/index.blade.php
-
-<x-app-layout>
-
-
-
-
     <data-table
         :config="{
-        url: `/{{app()->getLocale()}}/admin/posts/all?page=1`,
+        url: `posts/all?page=1`,
             },
         }"
         :columns="[
@@ -119,12 +113,4 @@ public function all(Request $request)
         "
 
     ></data-table>
-
-
-
-
-
-</x-app-layout>
-}
-
 ```

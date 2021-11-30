@@ -10,15 +10,20 @@
 
 ## Installation
 
-There is two-step to install packages
+## Requirements
 
+* [Vue.js](https://vuejs.org/)  => 2.x
+* [Laravel](http://laravel.com/docs/) => 7.x
+* [Tailwind](https://tailwindcss.com/) => 1.*
+
+for install and setup them we will work on the server-side and client-side , using few steps 
 ## server side 
 
-step 1
+#### step 1
 ```bash
 composer require yazan/laravel-datatable
 ```
-step 2 
+#### step 2 
 
 create grid class 
 ```bash
@@ -27,11 +32,11 @@ php artisan make:grid-class exampleGrid
 
 ## clint side
 
-step 1 
+#### step 1 
 ```bash
 npm i @yazan.alnughnugh/vue-datatable
 ```
-step 2 
+#### step 2 
 ```javascript
 // app/resources/js/app.js
 
