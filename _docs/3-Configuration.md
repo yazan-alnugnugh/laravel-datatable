@@ -7,96 +7,107 @@
 
 ## Configuration
 
-## client side
+## 1- client side
 
 
-**props datatable components**
+### props datatable components
 
-**config**
+#### config
 ```html
 // resources/posts/index.blade.php
 
-<x-app-layout>
-
-
-
-
     <data-table
-
               :config="{
-                url: `/admin/places/all?page=1`,
-
+                url: `/posts/all?page=1`,
                 toolbar:{
                     show: true,
                     delete: {
-                        url: `/${this.lang}/admin/places/destroy/all`
+                        url: `posts/destroy/all`
+                        show: `true`
                     }
                 },
-                perPage: {
-                    show: true,
-                    counts: [5,10, 25, 50, 100, 250],
-                },
-                filter:{
-                     selection:{
-                            show: true,
-                            data:[
-                                {
-                                label: 'Admins',
-                                relation: 'createdBy',
-                                column: 'first_name',
-                                rows: {{json_encode($admins)}}
-            
-                                },
-                            ]
-                     }
-                }
         
-                }"
-       
-
+              }"
     ></data-table>
 
+```
+
+| Name | Type | Default | Description  
+| --- | --- | --- | --- |
+| `url ` | String | "/" | (required) json data url |
+| `toolbar` | Object | {} |  to setup toolbar |
+| `toolbar.show` | Bool | true | to disable or enable toolbar |
+| `toolbar.delete` | Object | {} | to add delete all option to toolbar |
+| `toolbar.delete.url` | String | '/' | to set delete all url |
+| `toolbar.delete.show` | Bool | true | to disable or enable delete button |
+| `search` | Object | {} | to setup search input |
+| `search.show` | Bool | true | disable or enable the feature |
+
+
+#### perPage
+```html
+// resources/posts/index.blade.php
+
+    <data-table
+      :perPage="{
+               show: true,
+               counts: [5,10, 25, 50, 100, 250],
+           }"
+    ></data-table>
+
+```
+
+| Name | Type | Default | Description  
+| --- | --- | --- | --- |
+| `perPage` | Object | {} | to add rows count per page |
+| `perPage.show` | Bool | true | disable or enable the feature |
+| `perPage.count` | Array | [10, 25, 50, 100, 250] | to add rows counts you want to appear on a page |
 
 
 
+#### filters
+```html
+// resources/posts/index.blade.php
 
-</x-app-layout>
-}
+    <data-table
+      :filters="{
+            selection:{
+                   show: true,
+                   data:[
+                       {
+                       label: 'Admins',
+                       relation: 'createdBy',
+                       column: 'first_name',
+                       rows: {{json_encode($admins)}}
+   
+                       },
+                   ]
+            }
+               }"
+    ></data-table>
+
 ```
                                                                      |
 
 | Name | Type | Default | Description  
 | --- | --- | --- | --- |
-| `url ` | String | "/" | json data url |
-| `toolbar` | Object | {} | to add toolbar config |
-| `toolbar.show` | Object | {} | to disable or enable toolbar |
-| `toolbar.delete` | Object | {} | to add toolbar config |
-| `toolbar.delete.url` | Object | {} | to add toolbar config |
-| `perPage` | Object | {} | to add page rows count config |
-| `perPage.show` | Object | {} | disable or enable the feature |
-| `perPage.count` | Object | {} | to add rows counts you want to appear on a page |
 | `filter` | Object | {} | Add filters data |
 | `filter.selection` | Object | {} | the object contains all filter selection data |
-| `filter.selection.show` | Object | {} | to disable or enable selection filter |
+| `filter.selection.show` | Bool | true | to disable or enable selection filter |
 | `filter.selection.data` | Object | {} | the object is array contains all select input options |
-| `filter.selection.data.label` | Object | {} | name appears beside select input |
-| `filter.selection.data.relation` | Object | {} | relation name you will get it |
-| `filter.selection.data.column` | Object | {} | column you will get it |
-| `filter.selection.data.rows` | Object | {} | all rows from the database as JSON |
+| `filter.selection.data.label` | String | '' | name appears beside select input |
+| `filter.selection.data.relation` | String | '' | relation name you will get it |
+| `filter.selection.data.column` | String | '' | column name you will get it |
+| `filter.selection.data.rows` | Json | [{}] | all rows from the database as JSON |
+
+
 
 **columns**
 ```html
 // resources/posts/index.blade.php
 
-<x-app-layout>
-
-
-
-
     <data-table
-
                    :columns="[
-           
                       {
                       label: 'Title',
                       column: 'title',
@@ -110,16 +121,7 @@
                   
                       ]
                       "
-       
-
     ></data-table>
-
-
-
-
-
-</x-app-layout>
-}
 ```
                                                                |
 
@@ -129,6 +131,6 @@
 | `column` | String | '' |  database column name |
 | `show` | Bool | true | to add toolbar config |
 | `sort` | Object | {} | is responsible for sort column |
-| `sort.sortable` | Bool | true | if you want to use column for sorting  |
+| `sort.sortable` | Bool | true | disable or enable sorting  |
 | `sort.sortColumn` | String | '' | column name for sorting |
 | `sort.sortDir` | String | asc | sort direction for first sorting |
