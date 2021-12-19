@@ -9,7 +9,7 @@
             "email": "yazan-n100@hotmail.com"
         }
     ],
-    "minimum-stability": "1.0.7",
+    "minimum-stability": "stable",
     "require": {},
 
     "autoload": {
