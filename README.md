@@ -1,3 +1,9 @@
+<h2 align="center">Supporting Laravel-vue-datatable</h2>
+
+- [Become a backer or sponsor on Patreon](https://www.patreon.com/yazan_alnughnugh).
+- [One-time donation via crypto-currencies](Donations/crypto/index.md).
+
+
 # Introduction
 
 <p align="center">
@@ -6,7 +12,17 @@
 
 **if you want to make dataTable easy and quickly with crazy features, this package is for you.**
 
-These two Laravel packages are for making easy and quickly dataTable for your work, the goal is to make a table without taking care to code hard to create it,  just  with little steps, you  can create it
+These two Laravel packages are for making easy and quickly dataTable for your work, the goal is creating Datatable an easy way using ajax, 
+with interesting features,  just  with little steps, you  can create it
+
+
+
+## Demo
+
+ [DataTable Demo](https://packages.tourismcaravan.com/data-table)
+
+
+
 
 ## Table of contents
 
@@ -15,6 +31,7 @@ These two Laravel packages are for making easy and quickly dataTable for your wo
   2. [Installation and Setup](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/2-Installation-and-Setup.md)
   3. [Configuration](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/3-Configuration.md)
   4. [Usage](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/4-Usage.md)
+  5. [Donations](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/Donations/crypto/index.md)
 
 
 

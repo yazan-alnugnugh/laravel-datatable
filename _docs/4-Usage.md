@@ -13,6 +13,8 @@
         * [Action buttons](#Action-buttons)
         * [Delete](#Delete)
         * [Delete All](#Delete-All)
+  5. [Donations](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/Donations/crypto/index.md)
+        
         
 
 ## Usage

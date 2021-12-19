@@ -4,6 +4,8 @@
   2. [Installation and Setup](2-Installation-and-Setup.md)
   3. [Configuration](3-Configuration.md)
   4. [Usage](4-Usage.md)
+  5. [Donations](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/Donations/crypto/index.md)
+
 
 
 ## Requirements
