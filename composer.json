@@ -1,6 +1,6 @@
 {
     "name": "yazan/laravel-datatable",
-    "description": "Laravel and Vue packages to create Data Table",
+    "description": "Laravel and Vue packages to create Data Table ",
     "type": "library",
     "license": "MIT",
     "authors": [
