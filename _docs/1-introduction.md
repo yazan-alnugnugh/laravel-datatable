@@ -1,8 +1,8 @@
 
 <h2 align="center">Supporting Laravel-vue-datatable</h2>
 
-- [Become a backer or sponsor on Patreon](https://www.patreon.com/yazan_alnughnugh).
-- [One-time donation via crypto-currencies](Donations/crypto/index.md).
+- [Become sponsor on Patreon](https://www.patreon.com/yazan_alnughnugh).
+- [One-time donation via crypto-currencies](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/Donations/crypto/index.md).
 
 
 # Introduction
