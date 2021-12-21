@@ -11,14 +11,14 @@
 ## Requirements
 
 * [Vue.js](https://vuejs.org/)  => 2.x
-* [Laravel](http://laravel.com/docs/) => 7.x
-* [Tailwind](https://tailwindcss.com/) => 1.*
+* [Laravel](http://laravel.com/docs/) => 8.x
+* [Tailwind](https://tailwindcss.com/) => 3.*
 
 
 ## Installation
 
 
-for install and setup them we will work on the server-side and client-side , using few steps 
+To install and setup the packages we will work on the server-side and the client-side , using a few steps:
 ## server side 
 
 #### step 1
@@ -32,7 +32,7 @@ create grid class
 php artisan make:grid-class exampleGrid
 ```
 
-## clint side
+## client side
 
 #### step 1 
 ```bash

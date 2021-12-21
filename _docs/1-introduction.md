@@ -11,10 +11,21 @@
     <img src="../art/intro-image.png" alt="laravel-vue-datatable intro image">
 </p>
 
-**if you want to make dataTable easy and quickly with crazy features, this package is for you.**
+**if you want to create DataTable easy and quickly with crazy features, this package is for you.**
 
-These two Laravel packages are for making easy and quickly dataTable for your work, the goal is creating Datatable an easy way using ajax, 
-with interesting features,  just  with little steps, you  can create it
+These two Laravel packages are for making easy and quickly DataTable for your work with several features like:
+- Searching
+- Sorting
+- Add new relations
+- Multiple selection
+- Delete/Delete all
+- Restructing data
+- Permession access
+ -Response notifications for events
+- Pagination.
+
+The goal is to create Datatable in easy way using ajax,
+ with interesting features, just with little steps, you can create it
 
 ## Demo
 
