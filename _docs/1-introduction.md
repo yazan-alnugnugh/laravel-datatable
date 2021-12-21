@@ -21,7 +21,7 @@ These two Laravel packages are for making easy and quickly DataTable for your wo
 - Delete/Delete all
 - Restructing data
 - Permession access
- -Response notifications for events
+- Response notifications for events
 - Pagination.
 
 The goal is to create Datatable in easy way using ajax,
