@@ -29,7 +29,7 @@ composer require yazan/laravel-datatable
 
 create grid class 
 ```bash
-php artisan make:grid-class exampleGrid
+php artisan make:data-grid exampleGrid
 ```
 
 ## client side
