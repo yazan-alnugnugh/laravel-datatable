@@ -26,7 +26,9 @@ These two Laravel packages are for making easy and quickly DataTable for your wo
 The goal is to create Datatable in easy way using ajax,
  with interesting features, just with little steps, you can create it
 
+## Official Documentation
 
+ Documentation for Laravel Vue Datatable can be found here  [here](https://packages.tourismcaravan.com/docs/1/data-table)
 
 ## Demo
 
