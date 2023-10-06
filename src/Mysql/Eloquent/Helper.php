@@ -11,6 +11,11 @@ trait Helper
         return method_exists($this, 'reMapping');
     }
 
+    public function isCustomQuery()
+    {
+        return method_exists($this, 'setCustomQuery');
+    }
+
     public function resultHandling()
     {
         return $this->isMapping() ?$this->model : $this->model->toArray();

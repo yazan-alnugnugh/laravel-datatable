@@ -337,7 +337,7 @@ To add action buttons to rows we will use an action array to do that, we can add
                     'created_at' => $value['created_at'],
                     'updated_at' => $value['updated_at'],
                     'action' => [
-                        'edit' => ['<i data-path="'. route( 'admin.posts.edit', ['post' => $value['id']]).'" class="pathName cursor-pointer hover:text-green-500 far fa-edit"></i>', true],
+                        'edit' => ['<i data-path="'. route( 'posts.edit', ['post' => $value['id']]).'" class="pathName cursor-pointer hover:text-green-500 far fa-edit"></i>', true],
                     ],
                   
                 ];
@@ -364,7 +364,7 @@ To use delete action we can just insert our delete button and add ```delete``` c
                     'created_at' => $value['created_at'],
                     'updated_at' => $value['updated_at'],
                     'action' => [
-                        'delete' => ['<i data-route="'. route( 'admin.posts.destroy', ['post' => $value['id']]).'" class="confirm delete cursor-pointer  hover:text-red-500 far fa-trash-alt"></i>', true],
+                        'delete' => ['<i data-route="'. route( 'posts.destroy', ['post' => $value['id']]).'" class="confirm delete cursor-pointer  hover:text-red-500 far fa-trash-alt"></i>', true],
 
                     ],
                   

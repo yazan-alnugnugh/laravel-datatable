@@ -100,6 +100,11 @@ trait Eloquent
         return $this->model = $this->model->paginate($this->request->perPage, isset($this->columns) && count($this->columns) ? $this->columns  : '*');
 
     }
+
+    protected function runCustomQuery(callable $callback)
+    {
+        $callback($this->model);
+    }
     protected function mapping(callable $callback)
     {
         $this->model = $this->model->toArray();
@@ -113,14 +118,16 @@ trait Eloquent
 
         $this->model['data'] = $data;
 
-
     }
+
+   
 
     public function render()
     {
 
         $this->create();
         $this->with();
+        if($this->isCustomQuery()) $this->setCustomQuery();
         $this->search();
         $this->select();
         $this->orderBy();
