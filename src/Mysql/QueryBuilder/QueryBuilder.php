@@ -46,7 +46,7 @@ trait QueryBuilder
         if(isset($this->join) && count($this->join))
 
         foreach ($this->join as $key => $value):
-            $this->model->join($key, ...$value);
+            $this->model->leftJoin($key, ...$value);
         endforeach;
 
     }
@@ -107,6 +107,11 @@ trait QueryBuilder
         return $this->model = $this->model->paginate($this->request->perPage);
 
     }
+
+    protected function runCustomQuery(callable $callback)
+    {
+        $callback($this->model);
+    }
     protected function mapping(callable $callback)
     {
         $this->model = $this->model->toArray();
@@ -130,14 +135,14 @@ trait QueryBuilder
     public function render()
     {
 
-        $this->create();
+        $this->create(); 
         $this->columns();
         $this->join();
         $this->search();
         $this->select();
+        if($this->isCustomQuery()) $this->setCustomQuery();
         $this->orderBy();
         $this->paginate();
-
         if($this->isMapping()) $this->reMapping();
 
 

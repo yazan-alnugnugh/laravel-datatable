@@ -62,4 +62,22 @@ class Search
 
     }
 
+    public function translatableRelations($relations)
+    {
+
+        $search = $this->request->search;
+        foreach ($relations as $relation => $columns):
+
+                $this->model->orWhereHas($relation, function ($query) use ($columns, $search) {
+
+                    foreach ($columns as $column):
+                        $query->whereTranslation( $column, $search);
+                    endforeach;
+
+                });
+
+        endforeach;
+
+    }
+
 }

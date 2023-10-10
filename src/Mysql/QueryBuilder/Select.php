@@ -37,6 +37,12 @@ class Select
 
     }
 
+    public function translatable($select)
+    {
+        $this->model->where($select['searchColumn'], $select['value']);
+
+    }
+
     public function relational($select)
     {
 
@@ -46,9 +52,14 @@ class Select
 
     }
 
-    public function translatable($select)
+    public function translatableRelations($select)
     {
-        $this->model->where($select['searchColumn'], $select['value']);
+
+        $this->model->WhereHas($select['relation'], function ($query) use ($select) {
+
+            $query->whereTranslation($select['searchColumn'] ?? 'id', $select['value']);
+
+         });
 
     }
 
