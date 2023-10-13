@@ -19,7 +19,7 @@ class DataTableCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Create a new Data Grid class' ;
+    protected $description = 'Create a new Data Grid class';
 
     /**
      * Create a new command instance.
@@ -38,36 +38,30 @@ class DataTableCommand extends Command
      */
     public function handle()
     {
-
         $content = "<?php
-
 
 namespace App\DataGrid;
 
-use Yazan\DataTable\DataGrid;
+use Yazan\DataTable\Mysql\Eloquent\Eloquent;
 
-class {$this->argument('name')} extends DataGrid
+class {$this->argument('name')}
 {
-
+    use Eloquent;
     public \$model = \"\";
-
-
 }
 ";
-        if(!File::isDirectory('app/DataGrid')) File::makeDirectory('app/DataGrid');
 
-
-
-
-
-        if(File::exists("app/DataGrid/{$this->argument('name')}.php")){
-
-            $this->error('this file is exist');
-        }else{
-            File::put("app/DataGrid/{$this->argument('name')}.php", $content);
+        if (!File::isDirectory('app/DataGrid')) {
+            File::makeDirectory('app/DataGrid');
         }
-//
 
-//        return 'hello';
+        $filePath = "app/DataGrid/{$this->argument('name')}.php";
+
+        if (File::exists($filePath)) {
+            $this->error('This file already exists: ' . $filePath);
+        } else {
+            File::put($filePath, $content);
+            $this->info('File created successfully: ' . $filePath);
+        }
     }
 }

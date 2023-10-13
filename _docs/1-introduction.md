@@ -1,3 +1,4 @@
+
 <h2 align="center">Supporting Laravel-vue-datatable</h2>
 
 - [Become sponsor on Patreon](https://www.patreon.com/yazan_alnughnugh).
@@ -7,7 +8,7 @@
 # Introduction
 
 <p align="center">
-    <img src="art/intro-image.png" alt="laravel-vue-datatable intro image">
+    <img src="../art/intro-image.png" alt="laravel-vue-datatable intro image">
 </p>
 
 **if you want to create DataTable easy and quickly with crazy features, this package is for you.**
@@ -29,22 +30,22 @@ The goal is to create Datatable in easy way using ajax,
 ## Official Documentation
 
  Documentation for Laravel Vue Datatable can be found here  [here](https://packages.tourismcaravan.com/docs/1/data-table)
-
+ 
 ## Demo
 
  [DataTable Demo](https://packages.tourismcaravan.com/data-table)
 
 
 
-
 ## Table of contents
 
-  1. [Introduction](README.md)
+  1. [Introduction](1-introduction.md)
       * [Quick Example](#Quick-Example)
-  2. [Installation and Setup](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/2-Installation-and-Setup.md)
-  3. [Configuration](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/3-Configuration.md)
-  4. [Usage](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/4-Usage.md)
+  2. [Installation and Setup](2-Installation-and-Setup.md)
+  3. [Configuration](3-Configuration.md)
+  4. [Usage](4-Usage.md)
   5. [Donations](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/Donations/crypto/index.md)
+
 
 
 
@@ -92,7 +93,6 @@ public function all(Request $request)
 
 ```html
 // resources/posts/index.blade.php
-
     <data-table
         :config="{
         url: `posts/all?page=1`,
