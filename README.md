@@ -13,16 +13,16 @@
 **if you want to create DataTable easy and quickly with crazy features, this package is for you.**
 
 These two Laravel packages are for making easy and quickly DataTable for your work with several features like:
-- Searching: Easily search through your DataTable data.
-- Sorting: Sort your data conveniently.
-- Adding New Relations: Dynamically add new relationships between data.
+- Searching 
+- Sorting
+- Adding New Relations
 - Support for astrotomic/laravel-translatable Package: Seamlessly integrate with the astrotomic/laravel-translatable package for - multilingual support.
-- Multiple Selections: Select multiple items in your DataTable.
-- Delete/Delete All: Delete individual items or clear the entire DataTable.
-- Restructuring Data: Refine and reorganize your data as needed.
-- Permission Access: Control access to your DataTable based on permissions.
-- Response Notifications for Events: Receive notifications about events and actions.
-- Pagination: Implement pagination to handle large datasets effectively.
+- Multiple Selections
+- Delete/Delete All
+- Restructuring Data
+- Permission Access
+- Response Notifications for Events
+- Pagination
 
 The goal is to create Datatable in easy way using ajax,
  with interesting features, just with little steps, you can create it
@@ -44,18 +44,15 @@ The goal is to create Datatable in easy way using ajax,
 ```php
 // app/DataGrid/PostGrid.php
 
-<?php
+namespace App\\DataGrid;
 
+use Yazan\DataTable\Mysql\Eloquent\Eloquent;
 
-namespace App\DataGrid;
-
-use Yazan\DataTable\DataGrid;
-
-class PostGrid extends DataGrid
+class PostGrid
 {
+	use Eloquent;
 
-    public $model = "App\Models\Post";
-
+    public $model = "App\\Models\\Post";
 
 }
 
@@ -67,9 +64,9 @@ class PostGrid extends DataGrid
 // app/Http/Controller/PostController.php
 
 public function all(Request $request)
-{ 
+{
   $posts = (new PostGrid())->render();
-    
+
   return ['success' => true, 'collection' => $posts];
 
 }
@@ -80,56 +77,50 @@ public function all(Request $request)
 
 ```html
 // resources/posts/index.blade.php
-
-    <data-table
-        :config="{
-        url: `posts/all?page=1`,
-            },
-        }"
-        :columns="[
-        {
-        label: 'ID',
-        column: 'id',
-        show: true,
-            sort:{
-              sortable: false,
-              sortColumn: 'id',
-
-            },
-
-       },
-        {
-        label: 'Title',
-        column: 'title',
-         show: true,
-            sort:{
-             sortable: true,
-             sortColumn: 'title',
-             sortDir: 'asc',
-            },
-       },
+   <data-table
+       :config="{
+       url: `/posts/all?page=1`,
+           },
+       }":columns="[
        {
-        label: 'CreatedAt',
-        column: 'created_at',
-        show: true,
-             sort:{
-                sortable: true,
-                sortColumn: 'created_at',
-                sortDir: 'asc',
-             },
-       },
+       label: 'ID',
+       column: 'id',
+       show: true,
+           sort:{
+             sortable: false,
+             sortColumn: 'id',
+           },
+      },
        {
-        label: 'UpdatedAt',
-        column: 'updated_at',
+       label: 'Title',
+       column: 'title',
         show: true,
-             sort:{
-                sortable: true,
-                sortColumn: 'updated_at',
-                sortDir: 'asc',
-             },
-       },
-        ]
-        "
-
-    ></data-table>
+           sort:{
+            sortable: true,
+            sortColumn: 'title',
+            sortDir: 'asc',
+           },
+      },
+      {
+       label: 'CreatedAt',
+       column: 'created_at',
+       show: true,
+            sort:{
+               sortable: true,
+               sortColumn: 'created_at',
+               sortDir: 'asc',
+            },
+      },
+      {
+       label: 'UpdatedAt',
+       column: 'updated_at',
+       show: true,
+            sort:{
+               sortable: true,
+               sortColumn: 'updated_at',
+               sortDir: 'asc',
+            },
+      },
+       ]
+       "></data-table>
 ```
