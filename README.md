@@ -13,15 +13,16 @@
 **if you want to create DataTable easy and quickly with crazy features, this package is for you.**
 
 These two Laravel packages are for making easy and quickly DataTable for your work with several features like:
-- Searching
-- Sorting
-- Add new relations
-- Multiple selection
-- Delete/Delete all
-- Restructing data
-- Permession access
-- Response notifications for events
-- Pagination.
+- Searching: Easily search through your DataTable data.
+- Sorting: Sort your data conveniently.
+- Adding New Relations: Dynamically add new relationships between data.
+- Support for astrotomic/laravel-translatable Package: Seamlessly integrate with the astrotomic/laravel-translatable package for - multilingual support.
+- Multiple Selections: Select multiple items in your DataTable.
+- Delete/Delete All: Delete individual items or clear the entire DataTable.
+- Restructuring Data: Refine and reorganize your data as needed.
+- Permission Access: Control access to your DataTable based on permissions.
+- Response Notifications for Events: Receive notifications about events and actions.
+- Pagination: Implement pagination to handle large datasets effectively.
 
 The goal is to create Datatable in easy way using ajax,
  with interesting features, just with little steps, you can create it
@@ -33,19 +34,6 @@ The goal is to create Datatable in easy way using ajax,
 ## Demo
 
  [DataTable Demo](https://packages.tourismcaravan.com/data-table)
-
-
-
-
-## Table of contents
-
-  1. [Introduction](README.md)
-      * [Quick Example](#Quick-Example)
-  2. [Installation and Setup](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/2-Installation-and-Setup.md)
-  3. [Configuration](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/3-Configuration.md)
-  4. [Usage](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/4-Usage.md)
-  5. [Donations](https://github.com/yazan-alnugnugh/laravel-datatable/blob/master/_docs/Donations/crypto/index.md)
-
 
 
 
