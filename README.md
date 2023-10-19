@@ -29,7 +29,7 @@ The goal is to create Datatable in easy way using ajax,
 
 ## Official Documentation
 
- Documentation for Laravel Vue Datatable can be found here  [here](https://packages.tourismcaravan.com/docs/1/data-table)
+ Documentation for Laravel Vue Datatable can be found here  [here](https://packages.tourismcaravan.com/docs/2/data-table)
 
 ## Demo
 
